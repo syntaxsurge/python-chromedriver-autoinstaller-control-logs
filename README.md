@@ -13,7 +13,7 @@ pip install git+https://github.com/syntaxsurge/python-chromedriver-autoinstaller
 ```
 
 #### For Linux:
-```
+```bash
 pip3 install git+https://github.com/syntaxsurge/python-chromedriver-autoinstaller-control-logs.git
 ```
 
