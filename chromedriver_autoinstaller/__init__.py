@@ -7,15 +7,18 @@ from typing import AnyStr, Optional
 from . import utils
 
 
-def install(cwd: bool = False, path: Optional[AnyStr] = None, no_ssl: bool = False):
+def install(cwd: bool = False, path: Optional[AnyStr] = None, no_ssl: bool = False, log_level: int = logging.DEBUG):
     """
     Appends the directory of the chromedriver binary file to PATH.
 
     :param cwd: Flag indicating whether to download to current working directory. If the `cwd` is True, then path argument will be ignored.
     :param path: Specify the path where the Chrome driver will be installed. If the `cwd` value is True, this value is ignored.
     :param no_ssl: Determines whether or not to use the encryption protocol when downloading the chrome driver.
+    :param log_level: The logging level to use for the chromedriver installer.
     :return: The file path of chromedriver
     """
+    logging.getLogger().setLevel(log_level)
+
     if cwd:
         path = os.getcwd()
     chromedriver_filepath = utils.download_chromedriver(path, no_ssl)
