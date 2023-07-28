@@ -8,7 +8,7 @@ You can see the original project here:
 You can install the modified package directly from GitHub using pip:
 
 ```
-pip install git+https://github.com/syntaxsurge/chromedriver-autoinstaller-control-logs.git
+pip install git+https://github.com/syntaxsurge/python-chromedriver-autoinstaller-control-logs.git
 ```
 
 ## Usage
