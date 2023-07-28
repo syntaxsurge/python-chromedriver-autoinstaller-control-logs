@@ -1,26 +1,23 @@
-# chromedriver-autoinstaller
-Automatically download and install [chromedriver](https://chromedriver.chromium.org/) that supports the currently installed version of chrome. This installer supports Linux, MacOS and Windows operating systems.
+# Control logs of chromedriver_autoinstaller
+
+You can see the original project here:
+[chromedriver-autoinstaller](https://pypi.org/project/chromedriver-autoinstaller/)
 
 ## Installation
 
-```bash
-pip install chromedriver-autoinstaller
+You can install the modified package directly from GitHub using pip:
+
+```
+pip install git+https://github.com/syntaxsurge/chromedriver-autoinstaller-control-logs.git
 ```
 
 ## Usage
-Just type `import chromedriver_autoinstaller` in the module you want to use chromedriver.
 
-## Example
-```
-from selenium import webdriver
+If `log_level=logging.ERROR`, it logs only errors, not warnings nor infos.
+
+You can use it like this:
+
+```python
 import chromedriver_autoinstaller
-
-
-chromedriver_autoinstaller.install()  # Check if the current version of chromedriver exists
-                                      # and if it doesn't exist, download it automatically,
-                                      # then add chromedriver to path
-
-driver = webdriver.Chrome()
-driver.get("http://www.python.org")
-assert "Python" in driver.title
+chromedriver_autoinstaller.install(log_level=logging.ERROR)
 ```
